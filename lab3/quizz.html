@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz sobre Berlim</title>
+</head>
+
+<body>
+    <header>
+        <h1>Quizz sobre Berlim</h1>
+    </header>
+
+    <main>
+        <!-- Formulário separado para associar ao atributo 'form' -->
+        <form method="get" action="https://postman-echo.com/get">
+         
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" autocomplete="on" size="30" maxlength="50" required autofocus>
+
+                <label for="apelido">Apelido:</label>
+                <input type="text" id="apelido" name="apelido" placeholder="Digite seu apelido" autocomplete="off" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+            </fieldset>
+
+            
+            <fieldset>
+                <legend>Quizz sobre Berlim</legend>
+
+                <!-- Pergunta de texto com placeholder -->
+                <label for="monumento">1. Qual é o monumento mais famoso de Berlim?</label>
+                <input type="text" id="monumento" name="monumento" placeholder="Ex: Muro de Berlim"><br><br>
+
+                <!-- Pergunta de rádio -->
+                <label>2. Qual a melhor estação do ano para visitar Berlim?</label><br>
+                <input type="radio" id="primavera" name="estacao" value="primavera" form="form_quizz">
+                <label for="primavera">Primavera</label><br>
+                <input type="radio" id="verao" name="estacao" value="verao" form="form_quizz">
+                <label for="verao">Verão</label><br>
+                <input type="radio" id="outono" name="estacao" value="outono">
+                <label for="outono">Outono</label><br>
+                <input type="radio" id="inverno" name="estacao" value="inverno">
+                <label for="inverno">Inverno</label><br><br>
+
+                <!-- Pergunta de checkbox -->
+                <label>3. Quais destes eventos culturais você gostaria de participar em Berlim?</label><br>
+                <input type="checkbox" id="festival_cinema" name="evento" value="festival_cinema" form="form_quizz">
+                <label for="festival_cinema">Festival de Cinema de Berlim</label><br>
+                <input type="checkbox" id="berlin_marathon" name="evento" value="berlin_marathon">
+                <label for="berlin_marathon">Maratona de Berlim</label><br>
+                <input type="checkbox" id="berlin_music" name="evento" value="berlin_music">
+                <label for="berlin_music">Festival de Música de Berlim</label><br><br>
+
+                <!-- Pergunta de data -->
+                <label for="data_visita">4. Quando você planeja visitar Berlim?</label>
+                <input type="date" id="data_visita" name="data_visita" required><br><br>
+
+                <!-- Pergunta de tempo -->
+                <label for="hora_visita">5. A que horas você gostaria de começar seu passeio pela cidade?</label>
+                <input type="time" id="hora_visita" name="hora_visita" required><br><br>
+
+                <!-- Pergunta de número com step -->
+                <label for="pessoas">6. Quantas pessoas irão com você para Berlim?</label>
+                <input type="number" id="pessoas" name="pessoas" min="1" max="20" step="1" value="1"><br><br>
+
+                <!-- Pergunta de cor favorita -->
+                <label for="cor_favorita">7. Qual cor você escolheria para representar Berlim?</label>
+                <input type="color" id="cor_favorita" name="cor_favorita" value="#000000"><br><br>
+
+                <!-- Pergunta de intervalo (range) -->
+                <label for="classificacao">8. De 0 a 10, como você classificaria a hospitalidade em Berlim?</label>
+                <input type="range" id="classificacao" name="classificacao" min="0" max="10" step="1" value="5"><br><br>
+
+                <!-- Pergunta de imagem -->
+                <label for="foto">9. Envie uma foto da sua última viagem a Berlim (opcional):</label>
+                <input type="image" id="foto" name="foto" src="upload.png" alt="Enviar Foto"><br><br>
+
+                <!-- Botões de reset e envio -->
+                <button type="submit">Enviar Respostas</button>
+                <button type="reset">Limpar Respostas</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>Quizz sobre Berlim - DIW 2024</p>
+    </footer>
+</body>
+
+</html>
