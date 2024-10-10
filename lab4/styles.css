@@ -89,6 +89,7 @@ input {
 
 label,
 input {
+  text-align: left;
   display: block;
 }
 
