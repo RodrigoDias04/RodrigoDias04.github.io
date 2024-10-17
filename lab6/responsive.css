@@ -1,0 +1,28 @@
+body{
+    header { grid-area: header-area; }
+    nav { grid-area: nav-area; }
+    main { grid-area: main-area; }
+    aside { grid-area: right-area; }
+    footer { grid-area: footer-area; }
+    .grid-container {
+    display: grid;
+    grid-template-areas:
+    'header-area header-area header-area'
+    'menu-area main-area right-area '
+    'menu-area footer-area footer-area';
+    }
+}
+/* dropdown nova media queri */
+/* layout para mobile portrait */
+@media (max-width: 480px) {
+    body {background-color: lightblue;}
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+    'header-area header-area header-area'
+    'menu-area main-area right-area '
+    'menu-area footer-area footer-area';
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+}

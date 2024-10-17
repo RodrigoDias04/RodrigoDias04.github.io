@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* medidas sao tomadas da borda */
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap; /* permite que as seções se movam para a próxima linha quando não houver espaço */
+    justify-content: center; /* centraliza as seções no eixo principal */
+    margin: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centraliza o conteúdo horizontalmente */
+    margin: 10px; /* espaçamento entre as seções */
+    width: 150px; /* largura fixa para as seções */
+    background: #f0f0f0; /* cor de fundo clara */
+    border-radius: 10px; /* cantos arredondados */
+    transition: background-color 0.3s; /* animação suave na mudança de cor */
+}
+
+section:hover {
+    background: #e0e0e0; /* cor de fundo ao passar o mouse */
+}
+
+img {
+    width: 100px; /* largura da imagem */
+    border-radius: 10px; /* cantos arredondados */
+}
+
+div {
+    height: 100%; /* altura da div para que ocupe a altura da imagem */
+    text-align: center; /* centraliza o texto */
+}
+
+
+
