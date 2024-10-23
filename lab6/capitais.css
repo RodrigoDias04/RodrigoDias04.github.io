@@ -52,5 +52,38 @@ div {
     text-align: center; /* centraliza o texto */
 }
 
+/* Estilo para o artigo com efeito Parallax */
+.parallax {
+    background-image: url('images/parallax.jpg'); /* Substitua pela imagem que preferir */
+    min-height: 500px; /* Defina a altura do parallax */
+    background-attachment: fixed; /* Efeito parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.parallax-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.parallax-content p {
+    font-size: 18px;
+    margin: 0;
+}
+
 
 
