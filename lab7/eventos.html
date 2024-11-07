@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos na Cidade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Eventos na Cidade</h1>
+    <p>Descubra os próximos eventos e inscreva-se para receber mais informações.</p>
+  </header>
+  
+  <main>
+    <section id="eventos-lista">
+      <h2>Próximos Eventos</h2>
+      <div id="evento1" class="evento">
+        <h3>Festival de Verão</h3>
+        <p>Uma celebração ao ar livre com música, comida e diversão para toda a família.</p>
+        <button class="inscreva-se-btn">Inscreva-se</button>
+      </div>
+      <div id="evento2" class="evento">
+        <h3>Mostra de Cinema</h3>
+        <p>Exibições de filmes clássicos e independentes, com discussões e workshops.</p>
+        <button class="inscreva-se-btn">Inscreva-se</button>
+      </div>
+    </section>
+
+    <section id="formulario-inscricao">
+      <h2>Inscreva-se em um Evento</h2>
+      <form id="inscricao-form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="evento-selecao">Escolha o Evento:</label>
+        <select id="evento-selecao" name="evento">
+          <option value="festival-verao">Festival de Verão</option>
+          <option value="mostra-cinema">Mostra de Cinema</option>
+        </select>
+        
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  
+  <a href="/index.html"><button type="button">Página Inicial</button></a>
+
+
+  <footer>
+    <p>&copy; 2024 Eventos na Cidade</p>
+  </footer>
+
+  <script src="eventos.js"></script>
+</body>
+</html>
