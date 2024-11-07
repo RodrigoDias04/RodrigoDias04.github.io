@@ -1,45 +1,54 @@
-// 1. Evento de clique (click): Muda o conteúdo do botão para "Inscrição Completa!" ao clicar
-document.querySelectorAll('.inscreva-se-btn').forEach(button => {
-    button.addEventListener('click', (event) => {
-      event.target.textContent = 'Inscrição Completa!';
-      event.target.style.backgroundColor = '#4CAF50';
+// 1. Exibir receita ao clicar no botão "Ver Receita"
+document.querySelectorAll('.receita-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const prato = button.getAttribute('data-receita');
+      switch (prato) {
+        case 'bacalhau':
+          alert("Receita Bacalhau à Brás: Bacalhau, batatas, ovos, cebola e azeite.");
+          break;
+        case 'caldo-verde':
+          alert("Receita Caldo Verde: Couve, batatas, chouriço, alho e azeite.");
+          break;
+        case 'pasteis-nata':
+          alert("Receita Pastéis de Nata: Massa folhada, creme de nata e açúcar.");
+          break;
+        default:
+          alert("Receita não encontrada.");
+      }
     });
   });
   
-  // 2. Evento de duplo clique (dblclick): Adiciona uma nova descrição ao evento ao clicar duas vezes no título
-  document.querySelectorAll('.evento h3').forEach(title => {
-    title.addEventListener('dblclick', () => {
-      title.innerHTML += "<p style='font-size: 14px; color: #555;'>Esse evento é gratuito e aberto ao público.</p>";
+  // 2. Alternar prato em destaque ao clicar no botão "Mudar Prato"
+  const destaqueTexto = document.getElementById('prato-destaque');
+  const pratos = ["Bacalhau à Brás", "Caldo Verde", "Pastéis de Nata"];
+  let index = 0;
+  document.getElementById('mudar-destaque').addEventListener('click', () => {
+    index = (index + 1) % pratos.length;
+    destaqueTexto.textContent = pratos[index];
+  });
+  
+  // 3. Validar o email ao inscrever-se para novas receitas
+  document.getElementById('inscrever-receitas').addEventListener('click', () => {
+    const email = document.getElementById('email-receitas').value;
+    if (email.includes('@')) {
+      alert("Inscrição realizada com sucesso! Você receberá novas receitas em breve.");
+    } else {
+      alert("Por favor, insira um email válido.");
+    }
+  });
+  
+  // 4. Destacar o prato selecionado ao passar o mouse sobre ele
+  document.querySelectorAll('#pratos-tipicos li').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.style.backgroundColor = '#FFF8DC';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.backgroundColor = 'transparent';
     });
   });
   
-  // 3. Eventos de mouseover e mouseout: Muda a cor de fundo da descrição do evento ao passar o mouse
-  document.querySelectorAll('.evento').forEach(evento => {
-    evento.addEventListener('mouseover', () => {
-      evento.style.backgroundColor = '#f0f8ff';
-    });
-    evento.addEventListener('mouseout', () => {
-      evento.style.backgroundColor = 'white';
-    });
-  });
-  
-  // 4. Eventos de teclado (keydown e keyup): Exibe o texto digitado no campo nome em tempo real
-  const nomeInput = document.getElementById('nome');
-  nomeInput.addEventListener('keydown', () => {
-    nomeInput.style.color = 'blue';
-  });
-  nomeInput.addEventListener('keyup', () => {
-    nomeInput.style.color = 'black';
-  });
-  
-  // 5. Eventos de formulário (change e submit): Exibe uma mensagem de confirmação e limpa o formulário ao enviar
-  document.getElementById('evento-selecao').addEventListener('change', (event) => {
-    alert(`Você escolheu o evento: ${event.target.value}`);
-  });
-  
-  document.getElementById('inscricao-form').addEventListener('submit', (event) => {
-    event.preventDefault();
-    alert('Formulário enviado com sucesso! Obrigado por se inscrever.');
-    event.target.reset();
+  // 5. Exibir uma mensagem de boas-vindas ao carregar a página
+  window.addEventListener('load', () => {
+    alert("Bem-vindo à página de gastronomia local! Explore os pratos típicos e receba receitas!");
   });
   

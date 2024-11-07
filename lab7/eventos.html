@@ -3,58 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eventos na Cidade</title>
+  <title>Gastronomia Local</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Eventos na Cidade</h1>
-    <p>Descubra os próximos eventos e inscreva-se para receber mais informações.</p>
+    <h1>Gastronomia Local</h1>
+    <p>Descubra os sabores autênticos da nossa cidade.</p>
   </header>
   
   <main>
-    <section id="eventos-lista">
-      <h2>Próximos Eventos</h2>
-      <div id="evento1" class="evento">
-        <h3>Festival de Verão</h3>
-        <p>Uma celebração ao ar livre com música, comida e diversão para toda a família.</p>
-        <button class="inscreva-se-btn">Inscreva-se</button>
-      </div>
-      <div id="evento2" class="evento">
-        <h3>Mostra de Cinema</h3>
-        <p>Exibições de filmes clássicos e independentes, com discussões e workshops.</p>
-        <button class="inscreva-se-btn">Inscreva-se</button>
-      </div>
+    <section id="pratos-tipicos">
+      <h2>Pratos Típicos</h2>
+      <ul>
+        <li>
+          <h3>Bacalhau à Brás</h3>
+          <p>Um prato tradicional de bacalhau desfiado, misturado com batatas palha e ovos.</p>
+          <button class="receita-btn" data-receita="bacalhau">Ver Receita</button>
+        </li>
+        <li>
+          <h3>Caldo Verde</h3>
+          <p>Sopa de couve, batata e chouriço, muito apreciada nas noites frias.</p>
+          <button class="receita-btn" data-receita="caldo-verde">Ver Receita</button>
+        </li>
+        <li>
+          <h3>Pastéis de Nata</h3>
+          <p>Deliciosas tartes de nata com uma crosta folhada e creme suave.</p>
+          <button class="receita-btn" data-receita="pasteis-nata">Ver Receita</button>
+        </li>
+      </ul>
     </section>
 
-    <section id="formulario-inscricao">
-      <h2>Inscreva-se em um Evento</h2>
-      <form id="inscricao-form">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="evento-selecao">Escolha o Evento:</label>
-        <select id="evento-selecao" name="evento">
-          <option value="festival-verao">Festival de Verão</option>
-          <option value="mostra-cinema">Mostra de Cinema</option>
-        </select>
-        
-        <button type="submit">Enviar</button>
-      </form>
+    <section id="destaque-do-mes">
+      <h2>Destaque do Mês</h2>
+      <p id="destaque-descricao">Este mês, destacamos o famoso <span id="prato-destaque">Bacalhau à Brás</span>!</p>
+      <button id="mudar-destaque">Mudar Prato</button>
+    </section>
+
+    <section id="inscricao-receitas">
+      <h2>Receba Novas Receitas</h2>
+      <input type="email" placeholder="Seu email" id="email-receitas">
+      <button id="inscrever-receitas">Inscrever-se</button>
     </section>
   </main>
 
-  
-  <a href="/index.html"><button type="button">Página Inicial</button></a>
-
-
   <footer>
-    <p>&copy; 2024 Eventos na Cidade</p>
+    <p>DIW 2024</p>
   </footer>
 
-  <script src="eventos.js"></script>
+  <script src="/lab7/scripts/eventos.js"></script>
 </body>
 </html>
