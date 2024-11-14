@@ -1,4 +1,8 @@
 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
 //evento1
 const frase = document.querySelector('#mensagem');
 
@@ -43,23 +47,58 @@ texto.addEventListener("input", alteraCorBackground);
 texto.addEventListener("change", alteraCorBackground);
 
 //evento4
-const textoBackground = document.querySelector("#caixatexto2");
-const submitButton = document.querySelector("#submeter2");
-
-function alteraBackground() {
-  const color = textoBackground.value;
-  document.body.style.backgroundColor = color;
-}
-
-submitButton.addEventListener("click", alteraBackground);
+ document.querySelector("select").onchange = function () {
+  document.querySelector("body").style.backgroundColor = this.value;
+};
 
 //evento5
+
+if (!localStorage.getItem("counter")) {
+  localStorage.setItem("counter", 0);
+}
 
 const butao = document.querySelector(".contador");
 const numero = document.querySelector("#numero");
 
+let counter = Number(localStorage.getItem("counter"));
+
+numero.innerText = counter;
+
 function aumentaNumero() {
-  numero.innerText = Number(numero.innerText) + 1;
+  counter++;
+  numero.innerText = counter;
+  localStorage.setItem("counter", counter);
 }
 
 butao.addEventListener("click", aumentaNumero);
+
+
+//evento6
+
+const nome = document.querySelector("#nome");
+const idade = document.querySelector("#idade");
+const dados = document.querySelector("#dados");
+const form = document.querySelector("#form");
+
+form.onsubmit = (e) => {
+  e.preventDefault();
+  dados.innerHTML = `Olá, o ${nome.value} tem ${idade.value}!`;
+};
+
+
+//evento7
+
+if (!localStorage.getItem("counterSpan")) {
+  localStorage.setItem("counterSpan", 0);
+}
+
+const span = document.querySelector("span");
+function count() {
+  let counterSpan = Number(localStorage.getItem("counterSpan"));
+  counterSpan++;
+  span.innerHTML = counterSpan;
+  localStorage.setItem("counterSpan", counterSpan);
+}
+setInterval(count, 1000);
+
+});
