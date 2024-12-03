@@ -2,13 +2,74 @@ body{
     background-color: purple;
 }
 
-
 h1{
     color: white;
 }
 
-h2{
+.header
+{
+    background-color: rgb(128,4,124);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.element-header {
     color: white;
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+}
+.title-header
+{
+    color: white;
+    margin-right: auto;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+ul
+{
+    list-style: none;
+    display: flex;
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.grid-item img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cesto{
+    background-color: rgb(128,4,124);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    text-align: center;
 }
 
 footer{
