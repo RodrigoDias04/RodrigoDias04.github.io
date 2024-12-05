@@ -18,15 +18,22 @@ function fetchProdutos(categoria = "", ordernacao = "", pesquisa = "") {
         );
       }
 
+      // ponto 1 
       if (ordernacao === "lowest") {
         produtosFiltrados = produtosFiltrados.sort((a, b) => a.price - b.price);
       } else if (ordernacao === "highest") {
         produtosFiltrados = produtosFiltrados.sort((a, b) => b.price - a.price);
+       } else if (ordernacao === "ratingCres") {
+          produtosFiltrados = produtosFiltrados.sort((a, b) => a.rating - b.rating);
+        } else if (ordernacao === "ratingratingDecres") {
+          produtosFiltrados = produtosFiltrados.sort((a, b) => b.rating - a.rating);
+        
       }
 
+      // ponto 3
       if (pesquisa) {
         produtosFiltrados = produtosFiltrados.filter((produto) =>
-          produto.title.toLowerCase().includes(pesquisa.toLowerCase())
+          produto.title.toLowerCase().includes(pesquisa.toLowerCase()) || produto.description.includes(pesquisa)
         );
       }
 
@@ -226,6 +233,16 @@ function carregarCategorias(categorias) {
     
         // Faz a requisição para o endpoint /buy
         comprar(totalComDescontos);
+      });
+
+
+// butao comprar tudof
+      document
+      .getElementById("comprartudo-button")
+      .addEventListener("click", function () {~
+        produtos.forEach(function (produto) {
+          const sectiontodosProduto = criarProdutoNoCesto(produto);
+        });
       });
     
     function aplicarDescontos(total) {
