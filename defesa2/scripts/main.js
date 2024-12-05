@@ -244,6 +244,21 @@ function carregarCategorias(categorias) {
           const sectiontodosProduto = criarProdutoNoCesto(produto);
         });
       });
+
+      // butao menos info
+
+      document
+      .getElementById("menosinfo-button")
+      .addEventListener("click", function () {
+         produtos.forEach(removeDescricao (produto))
+      });
+
+      function removeDescricao (produto){
+        description.classList.add("description-product");
+      description.textContent ="";
+
+      }
+
     
     function aplicarDescontos(total) {
       const isEstudante = document.getElementById("estudante-checkbox").checked;
