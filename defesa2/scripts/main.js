@@ -254,7 +254,7 @@ function carregarCategorias(categorias) {
       });
 
       function removeDescricao (produto){
-        description.classList.add("description-product");
+        description.classList("description-product");
       description.textContent ="";
 
       }
